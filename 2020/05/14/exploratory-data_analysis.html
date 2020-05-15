@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>EDA (Exploratory Data Analysis) | Tech, and other stories</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="EDA (Exploratory Data Analysis)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ML/IoT/Almost anything" />
+<meta property="og:description" content="ML/IoT/Almost anything" />
+<link rel="canonical" href="https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html" />
+<meta property="og:url" content="https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html" />
+<meta property="og:site_name" content="Tech, and other stories" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-05-14T00:00:00-05:00","dateModified":"2020-05-14T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html"},"description":"ML/IoT/Almost anything","@type":"BlogPosting","url":"https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html","headline":"EDA (Exploratory Data Analysis)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/techandotherstories/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eyel.github.io/techandotherstories/feed.xml" title="Tech, and other stories" /><link rel="shortcut icon" type="image/x-icon" href="/techandotherstories/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>EDA (Exploratory Data Analysis) | Tech, and other stories</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="EDA (Exploratory Data Analysis)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ML/IoT/Almost anything" />
+<meta property="og:description" content="ML/IoT/Almost anything" />
+<link rel="canonical" href="https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html" />
+<meta property="og:url" content="https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html" />
+<meta property="og:site_name" content="Tech, and other stories" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-05-14T00:00:00-05:00","dateModified":"2020-05-14T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html"},"description":"ML/IoT/Almost anything","@type":"BlogPosting","url":"https://eyel.github.io/techandotherstories/2020/05/14/exploratory-data_analysis.html","headline":"EDA (Exploratory Data Analysis)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://eyel.github.io/techandotherstories/feed.xml" title="Tech, and other stories" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/techandotherstories/">Tech, and other stories</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/techandotherstories/about/">About Me</a><a class="page-link" href="/techandotherstories/search/">Search</a><a class="page-link" href="/techandotherstories/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">EDA (Exploratory Data Analysis)</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-14T00:00:00-05:00" itemprop="datePublished">
+        May 14, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Eyel/techandotherstories/tree/master/_notebooks/2020-15-05-exploratory-data_analysis.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/techandotherstories/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Eyel/techandotherstories/master?filepath=_notebooks%2F2020-15-05-exploratory-data_analysis.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/techandotherstories/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Eyel/techandotherstories/blob/master/_notebooks/2020-15-05-exploratory-data_analysis.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/techandotherstories/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-15-05-exploratory-data_analysis.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1---What-is-EDA?">1 - What is EDA?<a class="anchor-link" href="#1---What-is-EDA?"> </a></h2><p>EDA was first promoted and defined by John Tukey as:</p>
+<blockquote><p>"Procedures for analyzing data, techniques for interpreting the results of such procedures, ways of planning the gathering of data to make its analysis easier, more precise or more accurate, and all the machinery and results of (mathematical) statistics which apply to analyzing data."</p>
+</blockquote>
+<p>There isn't one single definition for EDA but it can described as follows:&gt; EDA is an approach for Data scientists/Data Analysts that employs differents techniques, like tables, visualization and statistic method, in order to analyze a dataset, uncover its main characterisics and underlining structure and gain the maximum of insights.
+As stated it is an approach not a set of techniques (to unroll for any situation). The way the data is handled often vary with each dataset and also. Each Data Scientist/Data analyst has its own approch to problems and data, that intuition is often build through years of experience and domain knowledge.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2---How-the-goal-and-context-of-analysis-affect-EDA?">2 - How the goal and context of analysis affect EDA?<a class="anchor-link" href="#2---How-the-goal-and-context-of-analysis-affect-EDA?"> </a></h2><p>EDA doesn't follow usual assumptions about the kind of model the data follows but rather helps validate (or not) hypothesis about the data. It let's the data suggest what kind of model it follows.
+The goal of the analyss and the context can affect the way we do EDA.
+<strong>There are two main types of goals:</strong></p>
+<ul>
+<li>Profiling :<ul>
+<li>Checking the quality of the data to see if it is suitable for analysis</li>
+<li>Are the mathematical assumptions verified?</li>
+<li>Do I need more data?</li>
+</ul>
+</li>
+<li>Discovery :<ul>
+<li>Gain more insights</li>
+<li>learn what the model could tell</li>
+<li>What are the relationships between the variables?</li>
+<li>Evaluate the features importance (interpretability)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Regarding the context of an EDA</strong></p>
+<ul>
+<li>How much time can allow for EDA?</li>
+<li>Do I need/have feedback from stakeholders</li>
+<li>How much domain knowledge do I have?</li>
+</ul>
+<h3 id="Projects-type">Projects type<a class="anchor-link" href="#Projects-type"> </a></h3><p>The type of project can also impact the way we do EDA :</p>
+<ul>
+<li>Answering business or research question  </li>
+<li>Answering open ended questions: How can we reduce our churn rate? </li>
+<li>Open exploration: extensively explore the data in order to summarize its main characteristics and look for new insights, without having to answer a specific question</li>
+<li>Model preparation: make sure the data is ready for modeling </li>
+<li>Data preparation: make sure the data is suitable for analysis, involves (handling missing data and erroneous values, convert data formats,...)</li>
+</ul>
+<h3 id="The-importance-of-domain-knowledge">The importance of domain knowledge<a class="anchor-link" href="#The-importance-of-domain-knowledge"> </a></h3><p>Having domain knowledge is a huge adavantage when analyzing data. It helps identify irregularities in the dataset. For example ????.
+In order to effectively combine numerous variables (Feature enginering) or extract new informations from asingle variable (Feature extraction).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3---Handling-large-datasets">3 - Handling large datasets<a class="anchor-link" href="#3---Handling-large-datasets"> </a></h2><p>In case of large datasets, analyzing the full ata can be time and resource consuming but there are several techniques</p>
+<h3 id="Sampling">Sampling<a class="anchor-link" href="#Sampling"> </a></h3><p>It is extracting a subset of the dataset that is representaive of the data. You will need to specify the sample size. Here are a few method of sampling.</p>
+<ul>
+<li>random sampling: every single data point has the same chance to be selected, wich makes the final sample unbias</li>
+<li>stratified random sampling: partition the data into differents subgroups then apply random sampling to each</li>
+</ul>
+<p><strong>Note: in order for the sample to representative, it should have teh same distribution as the original data.</strong></p>
+<h3 id="Filtering">Filtering<a class="anchor-link" href="#Filtering"> </a></h3><p>It consist of eliminating a subset of the data in order to remove unecessary information ie reduce the noise. It can be a signal processing technique or just removal of outliers.</p>
+<h3 id="Aggregation">Aggregation<a class="anchor-link" href="#Aggregation"> </a></h3><p>It is to summarize data based on one or several variables.
+*img</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4---High-dimensionality:-how-many-is-too-much?">4 - High dimensionality: how many is too much?<a class="anchor-link" href="#4---High-dimensionality:-how-many-is-too-much?"> </a></h2><p>For analysis, around dozen of variables is manageable. When there are a few dozen to thousands of variables, it becomes time consuming and vizualisaton become less effective. In these cases you can:</p>
+<ul>
+<li>choose the variables to analyze based on domain knowledge. Usually around twenty relevant variables.</li>
+<li>Drop variables: duplicate or similar ones, correlated vraiables</li>
+<li>Use statistical modeling techniques to select the most relevant features: random forest, decision trees,..</li>
+<li>Dimensionality reduction : PCA, t-NSE,... These techniques are also used for a more effective vizualisation of the data</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5---When-to-end-an-EDA">5 - When to end an EDA<a class="anchor-link" href="#5---When-to-end-an-EDA"> </a></h2><p>There are numerous methods for EDA and some data can be rich in information just waiting to be discovered. One might ask, when do I stop the EDA and move onto the next step? The answers depends on</p>
+<ul>
+<li>Time constrains: do you have a dealine for the final report?</li>
+<li>Stakeholders: do you need feedback from the stakeholders and did you get one?</li>
+<li>Assumptions: are all the assumptions made about the data verified?</li>
+<li>Feeling: do you have a good sense of understanding the data?</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/techandotherstories/2020/05/14/exploratory-data_analysis.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/techandotherstories/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/techandotherstories/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/techandotherstories/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>ML/IoT/Almost anything</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Eyel" title="Eyel"><svg class="svg-icon grey"><use xlink:href="/techandotherstories/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/aminata03" title="aminata03"><svg class="svg-icon grey"><use xlink:href="/techandotherstories/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
